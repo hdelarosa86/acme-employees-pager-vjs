@@ -1,0 +1,10 @@
+.user{
+    display: flex;
+    justify-content: space-between;
+}
+.user:nth-child(odd){
+    background-color: red;
+}
+.user:nth-child(even){
+    background-color: red;
+}
