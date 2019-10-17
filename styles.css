@@ -1,10 +1,35 @@
-.user{
-    display: flex;
-    justify-content: space-between;
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.user:nth-child(odd){
-    background-color: red;
+.user,
+.header {
+  display: flex;
+  border-bottom: 1px solid black;
+  width: 100%;
 }
-.user:nth-child(even){
-    background-color: red;
+.header {
+  color: white;
+  background-color: dodgerblue;
+  font-weight: bold;
+}
+.user div,
+.header div {
+  width: calc(100% / 4);
+  text-overflow: ellipsis;
+  padding: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .user {
+    display: block;
+  }
+  .user div {
+    width: 100%;
+    padding: .50rem;
+  }
+  .header {
+    display: none;
+  }
 }
