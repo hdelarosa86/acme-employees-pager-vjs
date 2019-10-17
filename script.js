@@ -2,7 +2,7 @@ window
   .fetch('https://acme-users-api-rev.herokuapp.com/api/users')
   .then(response =>
     response.json().then(data => {
-      const html = data.users
+      let html = data.users
         .map(user => {
           return `<div class="user">
             <div>${user.firstName}</div>
@@ -12,9 +12,28 @@ window
           </div>`;
         })
         .join('');
+        html = `<div class="header">
+          <div>First Name</div>
+          <div>Last Name</div>
+          <div>Email</div>
+          <div>Title</div>
+        </div>${html}`;
       document.querySelector('#usersList').innerHTML = html;
     })
   );
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // // const users = myFunction();
 // // const usersArray = users.then(data => data.users).then(value => render(value))
